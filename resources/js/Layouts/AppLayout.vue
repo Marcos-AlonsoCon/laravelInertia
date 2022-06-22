@@ -52,6 +52,9 @@ const logout = () => {
                                 <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </JetNavLink>
+                                <JetNavLink :href="route('user.index')" :active="route().current('user.index')">
+                                    User
+                                </JetNavLink>
                             </div>
                         </div>
 
@@ -304,6 +307,11 @@ const logout = () => {
 
             <!-- Page Content -->
             <main>
+            <div class="mt-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
+                 <div v-if="$page.props.flash.message" class="bg-green-600 px-6 py-4 shadow rounded ">
+                   <p class="text-white text-lg"> {{ $page.props.flash.message }} </p>
+                </div>
+            </div>
                 <slot />
             </main>
         </div>

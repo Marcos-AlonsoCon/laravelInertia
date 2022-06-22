@@ -15,13 +15,16 @@
         <!-- Scripts -->
         @routes
         <script src="{{ mix('js/app.js') }}" defer></script>
+        {{-- THIS ROUTES COME FROM THE WEB ROUTES --}}
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
+
+        {{-- CALLS THE app.js FILE FROM RESOURCES TO LOAD THE VUE COMPONENTS --}}
         @inertia
 
-        @env ('local')
+        {{-- @env ('local')
             <script src="http://localhost:3000/browser-sync/browser-sync-client.js"></script>
-        @endenv
+        @endenv --}}
     </body>
 </html>
